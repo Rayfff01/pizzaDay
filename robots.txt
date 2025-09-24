@@ -1,8 +1,7 @@
-# Разрешаем всем поисковым системам сканировать сайт
 User-agent: *
-Disallow: /private/         # запретить папку с приватными файлами (если есть)
-Disallow: /admin/           # запретить административные страницы (если есть)
-Disallow: /firebase/        # запретить доступ к папке Firebase SDK или конфиденциальным данным
+Disallow: /private/      
+Disallow: /admin/        
+Disallow: /firebase/        
 
 # Указываем карту сайта
-Sitemap: https://www.yoursite.com/sitemap.xml
+Sitemap: https://rayfff01.github.io/sitemap.xml
