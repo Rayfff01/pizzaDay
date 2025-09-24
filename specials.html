@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Акции — Пиццерия "La Pizza"</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-white shadow-md sticky top-0 z-50">
+    <div class="flex items-center space-x-3">
+      <img src="Images/Logo1.png" alt="Pizza Day Logo" class="w-16 h-16 object-contain">
+      <span class="text-2xl font-bold text-yellow-600">Pizza Day</span>
+    </div>
+    <nav class="space-x-6 hidden md:flex">
+      <a href="index.html" class="hover:text-yellow-600">Главная</a>
+      <a href="menu.html" class="hover:text-yellow-600">Меню</a>
+      <a href="specials.html" class="text-yellow-600 font-semibold">Акции</a>
+      <a href="contacts.html" class="hover:text-yellow-600">Контакты</a>
+    </nav>
+    <div class="flex space-x-4">
+      <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300 inline-block text-center">
+        Войти
+      </a>      
+      <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Заказать</button>
+    </div>
+  </header>
+
+  <!-- Specials Section -->
+  <section class="py-16 max-w-6xl mx-auto px-6">
+    <h1 class="text-3xl font-bold text-center mb-10">Наши акции</h1>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Акция 1 -->
+      <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col">
+        <div class="w-full h-48 flex items-center justify-center bg-gray-100">
+          <img src="Images/OnePlusOne.png" 
+               alt="2 пиццы по цене 1" 
+               class="w-full h-full object-contain">
+        </div>
+        <div class="p-6 flex flex-col text-center flex-1">
+          <h3 class="text-xl font-semibold mb-2">2 пиццы по цене 1</h3>
+          <p class="text-gray-600 mb-4">Каждый вторник покупаешь одну пиццу — вторая бесплатно!</p>
+          <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-auto">Подробнее</button>
+        </div>
+      </div>
+
+      <!-- Акция 2 -->
+      <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col">
+        <div class="w-full h-48 flex items-center justify-center bg-gray-100">
+          <img src="Images/Stud.png" 
+               alt="Скидка студентам" 
+               class="w-full h-full object-contain">
+        </div>
+        <div class="p-6 flex flex-col text-center flex-1">
+          <h3 class="text-xl font-semibold mb-2">Скидка студентам 25%</h3>
+          <p class="text-gray-600 mb-4">Покажи студенческий и получи скидку на все пиццы.</p>
+          <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-auto">Подробнее</button>
+        </div>
+      </div>
+
+      <!-- Акция 3 -->
+      <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col">
+        <div class="w-full h-48 flex items-center justify-center bg-gray-100">
+          <img src="Images/Birthday.png" 
+               alt="Бесплатная пицца в день рождения" 
+               class="w-full h-full object-contain">
+        </div>
+        <div class="p-6 flex flex-col text-center flex-1">
+          <h3 class="text-xl font-semibold mb-2">Бесплатная пицца в день рождения</h3>
+          <p class="text-gray-600 mb-4">При заказе от 1000 ₽ получи бесплатную пиццу в свой день рождения!</p>
+          <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-auto">Подробнее</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-10 mt-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Pizza Day</h3>
+        <p>Настоящая итальянская пицца в центре города</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Контакты</h3>
+        <p>Тел: +7 (666) 999-66-99</p>
+        <p>Адрес: г. Новосибирск, ул. Пиццерийная, 5</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Время работы</h3>
+        <p>Пн-Вс: 10:00 – 23:00</p>
+      </div>
+    </div>
+    <p class="text-center mt-8 text-gray-400">© 2025 Pizza Day. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>
