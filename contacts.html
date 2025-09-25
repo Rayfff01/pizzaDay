@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Контакты — Pizza Day</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-white shadow-md sticky top-0 z-50">
+    <div class="flex items-center space-x-3">
+      <img src="Images/Logo1.png" alt="Pizza Day Logo" class="w-14 h-14 object-contain">
+      <span class="text-2xl font-bold text-yellow-600">Pizza Day</span>
+    </div>
+    <nav class="space-x-6 hidden md:flex">
+      <a href="index.html" class="hover:text-yellow-600">Главная</a>
+      <a href="menu.html" class="hover:text-yellow-600">Меню</a>
+      <a href="specials.html" class="hover:text-yellow-600">Акции</a>
+      <a href="contacts.html" class="text-yellow-600 font-semibold">Контакты</a>
+    </nav>
+    <div class="flex space-x-4">
+      <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300">
+        Войти
+      </a>
+      <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Заказать</button>
+    </div>
+  </header>
+
+  <!-- Contacts Section -->
+  <section class="py-16 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Свяжитесь с нами</h2>
+    
+    <div class="grid md:grid-cols-2 gap-10">
+      <!-- Контактная информация -->
+      <div class="bg-white rounded-2xl shadow-md p-8">
+        <h3 class="text-xl font-semibold mb-6 text-yellow-600">Контактная информация</h3>
+        <p class="mb-4"><strong>Телефон:</strong> +7 (666) 999-66-99</p>
+        <p class="mb-4"><strong>Email:</strong> info@pizzaday.ru</p>
+        <p class="mb-4"><strong>Адрес:</strong> г. Новосибирск, ул. Пиццерийная, 5</p>
+        <p class="mb-4"><strong>Время работы:</strong> Пн-Вс: 10:00 – 23:00</p>
+      </div>
+
+      <!-- Форма обратной связи -->
+      <div class="bg-white rounded-2xl shadow-md p-8">
+        <h3 class="text-xl font-semibold mb-6 text-yellow-600">Напишите нам</h3>
+        <form onsubmit="return false;" class="space-y-4">
+          <input type="text" placeholder="Ваше имя" required 
+                 class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
+          <input type="email" placeholder="Ваш Email" required 
+                 class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
+          <textarea placeholder="Ваше сообщение" rows="4" required
+                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600"></textarea>
+          <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 w-full">
+            Отправить
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Карта -->
+    <div class="mt-16">
+      <h3 class="text-xl font-semibold mb-6 text-center text-yellow-600">Мы на карте</h3>
+      <div class="w-full h-96 rounded-2xl overflow-hidden shadow-md">
+         <iframe 
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e6a7fbe44b7d4930cfd8e1af2ff0dd4d1a2a785c9e1e3ab4a2d1cf74dc9c53c&amp;source=constructor" 
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-10 mt-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Pizza Day</h3>
+        <p>Настоящая итальянская пицца в центре города</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Контакты</h3>
+        <p>Тел: +7 (666) 999-66-99</p>
+        <p>Email: info@pizzaday.ru</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Время работы</h3>
+        <p>Пн-Вс: 10:00 – 23:00</p>
+      </div>
+    </div>
+    <p class="text-center mt-8 text-gray-400">© 2025 Pizza Day. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>
