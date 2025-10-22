@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Контакты — Pizza Day</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Скрипт корзины -->
+  <script type="module" src="cart.js" defer></script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
 
@@ -24,7 +26,7 @@
       <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300">
         Войти
       </a>
-      <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Корзина</button>
+      <button id="cartButton" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Корзина</button>
     </div>
   </header>
 
@@ -90,6 +92,15 @@
     </div>
     <p class="text-center mt-8 text-gray-400">© 2025 Pizza Day. Все права защищены.</p>
   </footer>
+
+  <!-- Модалка корзины -->
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
+      <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Ваша корзина</h3>
+      <div id="cart-container" class="flex flex-col gap-2 max-h-96 overflow-y-auto"></div>
+    </div>
+  </div>
 
 </body>
 </html>

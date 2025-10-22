@@ -21,8 +21,8 @@
       <a href="contacts.html" class="hover:text-yellow-600">Контакты</a>
     </nav>
     <div class="flex space-x-4">
-      <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300 inline-block text-center">Войти</a>      
-      <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Корзина</button>
+      <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300">Войти</a>
+      <button id="cartButton" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Корзина</button>
     </div>
   </header>
 
@@ -31,31 +31,6 @@
     <h2 class="text-3xl font-bold text-center mb-10">Наше меню</h2>
     <div id="menu-container" class="flex space-x-6 overflow-x-auto pb-4"></div>
   </section>
-
- <!-- Modal -->
-<div id="pizzaModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-  <div class="bg-white rounded-2xl shadow-lg max-w-md w-full p-6 relative">
-    <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold">&times;</button>
-    <img id="modalImage" src="" alt="Pizza" class="w-full h-64 object-contain rounded-lg mb-4">
-    <h2 id="modalTitle" class="text-2xl font-bold text-gray-800 mb-2">Название пиццы</h2>
-    <p id="modalDesc" class="text-gray-600 mb-4">Описание пиццы и состав</p>
-    <div class="mb-4">
-      <label class="block text-gray-700 mb-2 font-semibold">Выберите размер:</label>
-      <select id="pizzaSize" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
-        <option value="25">25 см</option>
-        <option value="30">30 см</option>
-        <option value="35">35 см</option>
-      </select>
-    </div>
-    <div class="flex justify-between items-center">
-      <p id="modalPrice" class="text-xl font-bold text-gray-800">Цена ₽</p>
-      <button id="addToCartBtn" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">
-        Добавить в корзину
-      </button>
-    </div>
-  </div>
-</div>
-
 
   <!-- Footer -->
   <footer id="contacts" class="bg-gray-900 text-white py-10 mt-10">
@@ -77,7 +52,37 @@
     <p class="text-center mt-8 text-gray-400">© 2025 Pizza Day. Все права защищены.</p>
   </footer>
 
-  <!-- Скрипт -->
+  <!-- Модалка пиццы -->
+  <div id="pizzaModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+      <h3 id="modalTitle" class="text-xl font-semibold mb-4"></h3>
+      <div class="w-full h-64 mb-4 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
+        <img id="modalImage" src="" alt="" class="w-full h-full object-contain">
+      </div>
+      <p id="modalDesc" class="text-gray-600 mb-4"></p>
+      <p id="modalPrice" class="font-bold mb-4"></p>
+      <label for="pizzaSize" class="block mb-2 font-semibold">Выберите размер (см):</label>
+      <select id="pizzaSize" class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-yellow-600">
+        <option value="25">25</option>
+        <option value="30">30</option>
+        <option value="35">35</option>
+      </select>
+      <button id="addToCartBtn" class="w-full bg-yellow-600 text-white py-2 rounded-xl hover:bg-yellow-700">Добавить в корзину</button>
+    </div>
+  </div>
+
+  <!-- Модалка корзины -->
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
+      <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Ваша корзина</h3>
+      <div id="cart-container" class="flex flex-col gap-2 max-h-96 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
   <script type="module" src="menu.js"></script>
+  <script type="module" src="cart.js"></script>
 </body>
 </html>

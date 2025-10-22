@@ -1,3 +1,5 @@
+// menu.js
+import { addToCart } from "./cart.js"; // универсальный скрипт корзины
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
@@ -13,10 +15,13 @@ const firebaseConfig = {
   measurementId: "G-LPQ2HQVEX9"
 };
 
+// Инициализация Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 const menuContainer = document.getElementById("menu-container");
+
+// Модальное окно
 const modal = document.getElementById("pizzaModal");
 const closeModal = document.getElementById("closeModal");
 const modalTitle = document.getElementById("modalTitle");
@@ -27,8 +32,8 @@ const addToCartBtn = document.getElementById("addToCartBtn");
 const pizzaSize = document.getElementById("pizzaSize");
 
 let selectedPizza = null;
-let currentPrice = 0;
 
+// Загрузка меню из Firebase
 async function loadMenu() {
   try {
     const snapshot = await get(ref(db, "Menu"));
@@ -42,11 +47,12 @@ async function loadMenu() {
   }
 }
 
+// Отрисовка карточек меню
 function renderMenu(menuData) {
   menuContainer.innerHTML = "";
   Object.entries(menuData).forEach(([key, item]) => {
     const card = document.createElement("div");
-    card.className = "bg-white shadow-md rounded-2xl p-4 flex flex-col justify-between transition transform hover:-translate-y-1 hover:shadow-lg w-64";
+    card.className = "bg-white shadow-md rounded-2xl p-4 flex flex-col justify-between transition transform hover:-translate-y-1 hover:shadow-lg w-64 flex-shrink-0";
 
     card.innerHTML = `
       <div class="w-full h-48 mb-4 overflow-hidden rounded-xl flex items-center justify-center bg-gray-100">
@@ -71,51 +77,64 @@ function renderMenu(menuData) {
     menuContainer.appendChild(card);
   });
 
+  // Назначаем обработчики кнопкам открытия модалки
   document.querySelectorAll(".openModalBtn").forEach(button => {
     button.addEventListener("click", () => openModal(button));
   });
 }
 
+// Открытие модального окна
 function openModal(button) {
   selectedPizza = {
     name: button.dataset.name,
     img: button.dataset.img,
     compound: button.dataset.compound,
-    price: parseFloat(button.dataset.price)
+    price: parseInt(button.dataset.price)
   };
-
-  currentPrice = selectedPizza.price;
 
   modalTitle.textContent = selectedPizza.name;
   modalImage.src = selectedPizza.img;
   modalDesc.textContent = selectedPizza.compound;
-  pizzaSize.value = "25"; // стандартный размер
-  updatePrice();
+  modalPrice.textContent = `Цена: ${selectedPizza.price} ₽`;
+  pizzaSize.value = "30"; // стандартный размер в см
   modal.classList.remove("hidden");
+  modal.classList.add("flex"); // центрируем через flex
 }
 
 // Закрытие модалки
-closeModal.addEventListener("click", () => modal.classList.add("hidden"));
-modal.addEventListener("click", e => { if (e.target === modal) modal.classList.add("hidden"); });
-
-// Изменение цены при выборе размера
-pizzaSize.addEventListener("change", () => {
-  updatePrice();
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
 });
 
-function updatePrice() {
-  let size = parseInt(pizzaSize.value);
-  let multiplier = 1;
-  if (size === 30) multiplier = 1.5;
-  if (size === 35) multiplier = 2;
-  modalPrice.textContent = `Цена: ${Math.round(currentPrice * multiplier)} ₽`;
-}
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+});
 
-// Добавление в корзину
+// Добавление пиццы в корзину с выбранным размером
 addToCartBtn.addEventListener("click", () => {
   const size = pizzaSize.value;
+  let priceMultiplier = 1;
+
+  // Пример изменения цены в зависимости от размера
+  if (size === "35") priceMultiplier = 1.3;
+  if (size === "40") priceMultiplier = 1.6;
+
+  const finalPrice = Math.round(selectedPizza.price * priceMultiplier);
+
+  addToCart({
+    name: selectedPizza.name,
+    size: size,
+    price: finalPrice
+  });
+
   alert(`Добавлена пицца "${selectedPizza.name}" (${size} см) в корзину!`);
   modal.classList.add("hidden");
+  modal.classList.remove("flex");
 });
 
+// Запуск
 loadMenu();
