@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Пиццерия "Pizza Day"</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Скрипт для отслеживания авторизации -->
+  <script type="module" src="auth-status.js" defer></script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
+
   <!-- Header -->
   <header class="flex justify-between items-center p-6 bg-white shadow-md sticky top-0 z-50">
     <div class="flex items-center space-x-3">
@@ -22,14 +27,15 @@
     </nav>
 
     <div class="flex space-x-4">
+      <!-- Кнопка "Войти", которая заменится на "Аккаунт" -->
       <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300 inline-block text-center">
         Войти
-      </a>      
-      <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Заказать</button>
+      </a>
+      <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Корзина</button>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="relative h-[80vh] flex items-center justify-center bg-cover bg-center" 
            style="background-image: url('https://images.unsplash.com/photo-1601924582971-6e1d1f9e9c44');">
     <div class="bg-black bg-opacity-50 p-10 rounded-2xl text-center text-white">
@@ -88,5 +94,6 @@
     </div>
     <p class="text-center mt-8 text-gray-400">© 2025 Pizza Day. Все права защищены.</p>
   </footer>
+
 </body>
 </html>
