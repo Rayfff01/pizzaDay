@@ -95,8 +95,8 @@ function openModal(button) {
   modalTitle.textContent = selectedPizza.name;
   modalImage.src = selectedPizza.img;
   modalDesc.textContent = selectedPizza.compound;
-  modalPrice.textContent = `Цена: ${selectedPizza.price} ₽`;
-  pizzaSize.value = "30"; // стандартный размер в см
+  pizzaSize.value = "25"; // стандартный размер в см
+  updateModalPrice(); // сразу отображаем цену
   modal.classList.remove("hidden");
   modal.classList.add("flex"); // центрируем через flex
 }
@@ -114,14 +114,31 @@ modal.addEventListener("click", e => {
   }
 });
 
-// Добавление пиццы в корзину с выбранным размером
-addToCartBtn.addEventListener("click", () => {
+// Пересчет цены при выборе размера
+pizzaSize.addEventListener("change", updateModalPrice);
+
+function updateModalPrice() {
+  if (!selectedPizza) return;
+
   const size = pizzaSize.value;
   let priceMultiplier = 1;
 
-  // Пример изменения цены в зависимости от размера
-  if (size === "35") priceMultiplier = 1.3;
-  if (size === "40") priceMultiplier = 1.6;
+  if (size === "30") priceMultiplier = 1.3;
+  if (size === "35") priceMultiplier = 1.6;
+
+  const finalPrice = Math.round(selectedPizza.price * priceMultiplier);
+  modalPrice.textContent = `Цена: ${finalPrice} ₽`;
+}
+
+// Добавление пиццы в корзину с выбранным размером
+addToCartBtn.addEventListener("click", () => {
+  if (!selectedPizza) return;
+
+  const size = pizzaSize.value;
+  let priceMultiplier = 1;
+
+  if (size === "30") priceMultiplier = 1.3;
+  if (size === "35") priceMultiplier = 1.6;
 
   const finalPrice = Math.round(selectedPizza.price * priceMultiplier);
 
