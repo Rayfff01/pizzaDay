@@ -137,8 +137,8 @@ addToCartBtn.addEventListener("click", () => {
   const size = pizzaSize.value;
   let priceMultiplier = 1;
 
-  if (size === "30") priceMultiplier = 1.3;
-  if (size === "35") priceMultiplier = 1.6;
+  if (size === "30") priceMultiplier = 1.4;
+  if (size === "35") priceMultiplier = 1.7;
 
   const finalPrice = Math.round(selectedPizza.price * priceMultiplier);
 

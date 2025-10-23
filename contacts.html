@@ -4,26 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Контакты — Pizza Day</title>
+  <meta name="description" content="Контакты Pizza Day: телефон, адрес, время работы. Быстрая доставка пиццы по Новосибирску.">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Скрипт корзины -->
   <script type="module" src="cart.js" defer></script>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
 
-  <!-- Header -->
+   <!-- Header -->
   <header class="flex justify-between items-center p-6 bg-white shadow-md sticky top-0 z-50">
     <div class="flex items-center space-x-3">
-      <img src="Images/Logo1.png" alt="Pizza Day Logo" class="w-14 h-14 object-contain">
+      <img src="Images/Logo1.png" alt="Pizza Day Logo" class="w-16 h-16 object-contain">
       <span class="text-2xl font-bold text-yellow-600">Pizza Day</span>
     </div>
+
     <nav class="space-x-6 hidden md:flex">
       <a href="index.html" class="hover:text-yellow-600">Главная</a>
       <a href="menu.html" class="hover:text-yellow-600">Меню</a>
       <a href="specials.html" class="hover:text-yellow-600">Акции</a>
       <a href="contacts.html" class="text-yellow-600 font-semibold">Контакты</a>
     </nav>
+
     <div class="flex space-x-4">
-      <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300">
+      <a href="auth.html" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-xl hover:bg-gray-300 inline-block text-center">
         Войти
       </a>
       <button id="cartButton" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700">Корзина</button>
