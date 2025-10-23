@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Меню — Pizza Day</title>
   <meta name="description" content="Посмотрите меню Pizza Day: вкусная пицца, закуски и напитки. Закажите любимую пиццу с доставкой по Новосибирску.">
-
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
@@ -31,7 +30,14 @@
   <!-- Menu Section -->
   <section id="menu" class="py-16 max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center mb-10">Наше меню</h2>
-    <div id="menu-container" class="flex space-x-6 overflow-x-auto pb-4"></div>
+
+    <!-- Пиццы -->
+    <h3 class="text-2xl font-semibold mb-6">Пицца</h3>
+    <div id="pizzas-container" class="flex space-x-6 overflow-x-auto pb-4"></div>
+
+    <!-- Закуски -->
+    <h3 class="text-2xl font-semibold mb-6 mt-10">Закуски</h3>
+    <div id="snacks-container" class="flex space-x-6 overflow-x-auto pb-4"></div>
   </section>
 
   <!-- Footer -->
@@ -64,12 +70,14 @@
       </div>
       <p id="modalDesc" class="text-gray-600 mb-4"></p>
       <p id="modalPrice" class="font-bold mb-4"></p>
-      <label for="pizzaSize" class="block mb-2 font-semibold">Выберите размер (см):</label>
-      <select id="pizzaSize" class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-yellow-600">
-        <option value="25">25</option>
-        <option value="30">30</option>
-        <option value="35">35</option>
-      </select>
+      <div id="modalSizeContainer" class="mb-4">
+        <label for="pizzaSize" class="block mb-2 font-semibold">Выберите размер (см):</label>
+        <select id="pizzaSize" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+        </select>
+      </div>
       <button id="addToCartBtn" class="w-full bg-yellow-600 text-white py-2 rounded-xl hover:bg-yellow-700">Добавить в корзину</button>
     </div>
   </div>
@@ -86,5 +94,6 @@
   <!-- Скрипты -->
   <script type="module" src="menu.js"></script>
   <script type="module" src="cart.js"></script>
+
 </body>
 </html>
