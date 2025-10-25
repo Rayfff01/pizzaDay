@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Меню — Pizza Day</title>
-  <meta name="description" content="Посмотрите меню Pizza Day: вкусная пицца, закуски и напитки. Закажите любимую пиццу с доставкой по Новосибирску.">
+  <meta name="description" content="Меню Pizza Day — вкусная пицца, закуски и десерты. Попробуйте любимые блюда с доставкой по Новосибирску.">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
@@ -33,11 +33,15 @@
 
     <!-- Пиццы -->
     <h3 class="text-2xl font-semibold mb-6">Пицца</h3>
-    <div id="pizzas-container" class="flex space-x-6 overflow-x-auto pb-4"></div>
+    <div id="pizzas-container" class="flex flex-wrap gap-6 justify-center"></div>
 
     <!-- Закуски -->
     <h3 class="text-2xl font-semibold mb-6 mt-10">Закуски</h3>
-    <div id="snacks-container" class="flex space-x-6 overflow-x-auto pb-4"></div>
+    <div id="snacks-container" class="flex flex-wrap gap-6 justify-center"></div>
+
+    <!-- Десерты -->
+    <h3 class="text-2xl font-semibold mb-6 mt-10">Десерты</h3>
+    <div id="desserts-container" class="flex flex-wrap gap-6 justify-center"></div>
   </section>
 
   <!-- Footer -->
@@ -60,7 +64,7 @@
     <p class="text-center mt-8 text-gray-400">© 2025 Pizza Day. Все права защищены.</p>
   </footer>
 
-  <!-- Модалка пиццы -->
+  <!-- Модалка -->
   <div id="pizzaModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
     <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
       <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
@@ -94,6 +98,5 @@
   <!-- Скрипты -->
   <script type="module" src="menu.js"></script>
   <script type="module" src="cart.js"></script>
-
 </body>
 </html>
