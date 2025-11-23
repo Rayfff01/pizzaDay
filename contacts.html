@@ -8,7 +8,6 @@
   <meta name="description" content="Свяжитесь с пиццерией Pizza Day в Новосибирске: адрес, телефон, график работы и форма обратной связи. Быстрая доставка пиццы и закусок.">
   <meta name="keywords" content="контакты Pizza Day, доставка пиццы Новосибирск, телефон пиццерии, адрес Pizza Day, итальянская пицца, заказ еды">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Контакты — Pizza Day">
   <meta property="og:description" content="Контакты Pizza Day в Новосибирске: телефон, адрес и время работы. Закажите пиццу с доставкой!">
   <meta property="og:image" content="Images/Contacts.png">
@@ -17,151 +16,142 @@
 
   <link rel="canonical" href="https://pizzaday.ru/contacts.html">
   <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="cart.js" defer></script>
 
-  <!-- Подключение шрифта с unicode-range для кириллицы -->
   <style>
-    @font-face {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-      unicode-range: U+0400-04FF; /* только кириллица */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
     }
   </style>
 </head>
 
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-sans bg-gray-50 text-gray-900">
 
-  <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Логотип адаптивный -->
-      <a href="index.html" class="flex items-center gap-3">
-        <picture>
-          <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain" loading="lazy">
-        </picture>
-        <span class="text-lg font-bold text-yellow-600">Pizza Day</span>
-      </a>
+<header class="bg-white shadow-md sticky top-0 z-50" role="banner">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">
+      <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain" loading="lazy">
+      <span class="text-lg font-bold text-yellow-600">Pizza Day</span>
+    </a>
 
-      <!-- Навигация -->
-      <nav id="desktopNav" class="hidden md:flex items-center gap-6" aria-label="Главное меню">
-        <a href="index.html" class="hover:text-yellow-600">Главная</a>
-        <a href="menu.html" class="hover:text-yellow-600">Меню</a>
-        <a href="specials.html" class="hover:text-yellow-600">Акции</a>
-        <a href="contacts.html" class="text-yellow-600 font-semibold">Контакты</a>
-      </nav>
+    <nav id="desktopNav" class="hidden md:flex items-center gap-6" aria-label="Главное меню">
+      <a href="index.html" class="hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Главная</a>
+      <a href="menu.html" class="hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Меню</a>
+      <a href="specials.html" class="hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Акции</a>
+      <a href="contacts.html" class="text-yellow-600 font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Контакты</a>
+    </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm">Войти</a>
-        <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm">Корзина</button>
+    <div class="flex items-center gap-3">
+      <a href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400">Войти</a>
+      <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400">Корзина</button>
 
-        <button id="burgerBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 7h16M4 12h16M4 17h16"></path>
-          </svg>
-        </button>
+      <button id="burgerBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white" role="navigation" aria-label="Мобильное меню">
+    <nav class="px-4 pt-3 pb-4 flex flex-col gap-2">
+      <a href="index.html" class="py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Главная</a>
+      <a href="menu.html" class="py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Меню</a>
+      <a href="specials.html" class="py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Акции</a>
+      <a href="contacts.html" class="py-2 text-base font-medium text-yellow-600 font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Контакты</a>
+      <div class="pt-2 border-t border-gray-100">
+        <a href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3 focus:outline-none focus:ring-2 focus:ring-yellow-400">Войти</a>
+        <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400">Корзина</button>
       </div>
-    </div>
+    </nav>
+  </div>
+</header>
 
-    <!-- Мобильное меню -->
-    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
-      <nav class="px-4 pt-3 pb-4 flex flex-col gap-2">
-        <a href="index.html" class="py-2 text-base font-medium">Главная</a>
-        <a href="menu.html" class="py-2 text-base font-medium">Меню</a>
-        <a href="specials.html" class="py-2 text-base font-medium">Акции</a>
-        <a href="contacts.html" class="py-2 text-base font-medium text-yellow-600 font-semibold">Контакты</a>
-        <div class="pt-2 border-t border-gray-100">
-          <a href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3">Войти</a>
-          <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl">Корзина</button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Contacts Section -->
+<main>
   <section class="py-16 max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-10">Свяжитесь с нами</h2>
-    
+    <h1 class="text-3xl font-bold text-center mb-10">Свяжитесь с нами</h1>
+
     <div class="grid md:grid-cols-2 gap-10">
       <div class="bg-white rounded-2xl shadow-md p-8">
-        <h3 class="text-xl font-semibold mb-6 text-yellow-600">Контактная информация</h3>
-        <p class="mb-4"><strong>Телефон:</strong> +7 (666) 999-66-99</p>
-        <p class="mb-4"><strong>Email:</strong> info@pizzaday.ru</p>
+        <h2 class="text-xl font-semibold mb-6 text-yellow-600">Контактная информация</h2>
+        <p class="mb-4"><strong>Телефон:</strong> <a href="tel:+76669996699" class="text-yellow-600 hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">+7 (666) 999-66-99</a></p>
+        <p class="mb-4"><strong>Email:</strong> <a href="mailto:info@pizzaday.ru" class="text-yellow-600 hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">info@pizzaday.ru</a></p>
         <p class="mb-4"><strong>Адрес:</strong> г. Новосибирск, ул. Пиццерийная, 5</p>
-        <p class="mb-4"><strong>Время работы:</strong> Пн-Вс: 10:00 – 23:00</p>
+        <p class="mb-4"><strong>Время работы:</strong> Пн–Вс: 10:00 – 23:00</p>
       </div>
 
       <div class="bg-white rounded-2xl shadow-md p-8">
-        <h3 class="text-xl font-semibold mb-6 text-yellow-600">Напишите нам</h3>
-        <form onsubmit="return false;" class="space-y-4">
-          <input type="text" placeholder="Ваше имя" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
-          <input type="email" placeholder="Ваш Email" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
-          <textarea placeholder="Ваше сообщение" rows="4" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600"></textarea>
-          <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 w-full">Отправить</button>
+        <h2 class="text-xl font-semibold mb-6 text-yellow-600">Напишите нам</h2>
+        <form onsubmit="return false;" class="space-y-4" aria-label="Форма обратной связи">
+          <input type="text" placeholder="Ваше имя" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Ваше имя">
+          <input type="email" placeholder="Ваш Email" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Ваш Email">
+          <textarea placeholder="Ваше сообщение" rows="4" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Ваше сообщение"></textarea>
+          <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400">Отправить</button>
         </form>
       </div>
     </div>
 
     <div class="mt-16">
-      <h3 class="text-xl font-semibold mb-6 text-center text-yellow-600">Мы на карте</h3>
+      <h2 class="text-xl font-semibold mb-6 text-center text-yellow-600">Мы на карте</h2>
       <div class="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-md">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e6a7fbe44b7d4930cfd8e1af2ff0dd4d1a2a785c9e1e3ab4a2d1cf74dc9c53c&amp;source=constructor" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen></iframe>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e6a7fbe44b7d4930cfd8e1af2ff0dd4d1a2a785c9e1e3ab4a2d1cf74dc9c53c&amp;source=constructor" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen title="Карта Pizza Day"></iframe>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white mt-10">
-    <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-      <div>
-        <h3 class="text-lg font-bold mb-3">Pizza Day</h3>
-        <p class="text-gray-300">Настоящая итальянская пицца в центре города</p>
-      </div>
-      <div>
-        <h3 class="text-lg font-bold mb-3">Контакты</h3>
-        <p class="text-gray-300">Тел: +7 (666) 999-66-99</p>
-        <p class="text-gray-300">Адрес: г. Новосибирск, ул. Пиццерийная, 5</p>
-        <a href="mailto:info@pizzaday.ru" class="text-yellow-400 hover:underline mt-2 inline-block">info@pizzaday.ru</a>
-      </div>
-      <div>
-        <h3 class="text-lg font-bold mb-3">Время работы</h3>
-        <p class="text-gray-300">Пн–Вс: 10:00 – 23:00</p>
-      </div>
+<footer class="bg-gray-900 text-white mt-10" role="contentinfo">
+  <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 gap-8 md:grid-cols-3 text-center md:text-left">
+    <div>
+      <h3 class="text-lg font-bold mb-3">Pizza Day</h3>
+      <p class="text-gray-300">Настоящая итальянская пицца в центре города</p>
     </div>
-    <div class="border-t border-gray-800">
-      <p class="text-center text-gray-400 py-4">© 2025 Pizza Day. Все права защищены.</p>
+    <div>
+      <h3 class="text-lg font-bold mb-3">Контакты</h3>
+      <p class="text-gray-300">Тел: <a href="tel:+76669996699" class="text-yellow-400 hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">+7 (666) 999-66-99</a></p>
+      <p class="text-gray-300">Адрес: г. Новосибирск, ул. Пиццерийная, 5</p>
+      <a href="mailto:info@pizzaday.ru" class="text-yellow-400 hover:underline mt-2 inline-block focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">info@pizzaday.ru</a>
     </div>
-  </footer>
-
-  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
-      <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-      <h3 class="text-lg font-semibold mb-4">Ваша корзина</h3>
-      <div id="cart-container" class="flex flex-col gap-2 max-h-96 overflow-y-auto"></div>
+    <div>
+      <h3 class="text-lg font-bold mb-3">Время работы</h3>
+      <p class="text-gray-300">Пн–Вс: 10:00 – 23:00</p>
     </div>
   </div>
+  <div class="border-t border-gray-800">
+    <p class="text-center text-gray-400 py-4">© 2025 Pizza Day. Все права защищены.</p>
+  </div>
+</footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const burger = document.getElementById('burgerBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      if (burger && mobileMenu) {
-        burger.addEventListener('click', () => {
-          burger.setAttribute('aria-expanded', burger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-          mobileMenu.classList.add('hidden');
-          burger.setAttribute('aria-expanded', 'false');
-        }
-      });
+<div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
+    <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400">&times;</button>
+    <h3 class="text-lg font-semibold mb-4">Ваша корзина</h3>
+    <div id="cart-container" class="flex flex-col gap-2 max-h-96 overflow-y-auto"></div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+      burger.setAttribute('aria-expanded', burger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+      mobileMenu.classList.toggle('hidden');
     });
-  </script>
+  }
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      mobileMenu.classList.add('hidden');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+</script>
 
 </body>
 </html>

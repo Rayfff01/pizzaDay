@@ -18,10 +18,9 @@
 
   <link rel="canonical" href="https://pizzaday.ru/">
   <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Собственные скрипты -->
+  <!-- Скрипты -->
   <script type="module" src="auth-status.js" defer></script>
   <script type="module" src="cart.js" defer></script>
 
@@ -92,67 +91,72 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative h-[80vh] flex items-center justify-center bg-cover bg-center" style="background-image: url('Images/Hero.webp');">
-    <div class="bg-black bg-opacity-50 p-10 rounded-2xl text-center text-white max-w-3xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Настоящая итальянская пицца</h1>
-      <p class="text-lg md:text-2xl mb-6">Горячая, вкусная и прямо из печи!</p>
-      <a href="menu.html" class="bg-yellow-600 px-6 py-3 rounded-xl text-xl hover:bg-yellow-700 inline-block">Посмотреть меню</a>
-    </div>
-  </section>
+  <!-- Main -->
+  <main>
 
-  <!-- Разделы -->
-  <section class="py-16 max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Разделы</h2>
-    <div class="grid gap-8 md:grid-cols-3">
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center bg-cover bg-center">
+      <div class="bg-black bg-opacity-50 p-10 rounded-2xl text-center text-white max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Настоящая итальянская пицца</h1>
+        <p class="text-lg md:text-2xl mb-6">Горячая, вкусная и прямо из печи!</p>
+        <a href="menu.html" class="bg-yellow-600 px-6 py-3 rounded-xl text-xl hover:bg-yellow-700 inline-block">Посмотреть меню</a>
+      </div>
+    </section>
 
-      <!-- Меню -->
-      <a href="menu.html" class="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition flex flex-col items-center text-center">
-        <div class="w-full h-40 flex items-center justify-center bg-gray-100">
-          <picture class="w-full h-full flex items-center justify-center">
-            <source srcset="Images/Menu-small.webp" type="image/webp" media="(max-width: 640px)">
-            <source srcset="Images/Menu.webp" type="image/webp" media="(min-width: 641px)">
-            <source srcset="Images/Menu-small.png" media="(max-width: 640px)">
-            <source srcset="Images/Menu.png" media="(min-width: 641px)">
-            <img src="Images/Menu.png" alt="Меню" class="w-full h-full object-contain" loading="lazy">
-          </picture>
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Меню</h3>
-        <p class="text-gray-600 mt-2 px-2">Откройте для себя все наши блюда</p>
-      </a>
+    <!-- Разделы -->
+    <section class="py-16 max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Разделы</h2>
+      <div class="grid gap-8 md:grid-cols-3">
 
-      <!-- Акции -->
-      <a href="specials.html" class="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition flex flex-col items-center text-center">
-        <div class="w-full h-40 flex items-center justify-center bg-gray-100">
-          <picture class="w-full h-full flex items-center justify-center">
-            <source srcset="Images/specials-small.webp" type="image/webp" media="(max-width: 640px)">
-            <source srcset="Images/specials.webp" type="image/webp" media="(min-width: 641px)">
-            <source srcset="Images/specials-small.png" media="(max-width: 640px)">
-            <source srcset="Images/specials.png" media="(min-width: 641px)">
-            <img src="Images/specials.png" alt="Акции" class="w-full h-full object-contain" loading="lazy">
-          </picture>
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Акции</h3>
-        <p class="text-gray-600 mt-2 px-2">Специальные предложения для вас</p>
-      </a>
+        <!-- Меню -->
+        <a href="menu.html" class="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition flex flex-col items-center text-center">
+          <div class="w-full h-40 flex items-center justify-center bg-gray-100">
+            <picture class="w-full h-full flex items-center justify-center">
+              <source srcset="Images/Menu-small.webp" type="image/webp" media="(max-width: 640px)">
+              <source srcset="Images/Menu.webp" type="image/webp" media="(min-width: 641px)">
+              <source srcset="Images/Menu-small.png" media="(max-width: 640px)">
+              <source srcset="Images/Menu.png" media="(min-width: 641px)">
+              <img src="Images/Menu.png" alt="Меню" class="w-full h-full object-contain" loading="lazy">
+            </picture>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Меню</h3>
+          <p class="text-gray-600 mt-2 px-2">Откройте для себя все наши блюда</p>
+        </a>
 
-      <!-- Контакты -->
-      <a href="contacts.html" class="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition flex flex-col items-center text-center">
-        <div class="w-full h-40 flex items-center justify-center bg-gray-100">
-          <picture class="w-full h-full flex items-center justify-center">
-            <source srcset="Images/Contacts-small.webp" type="image/webp" media="(max-width: 640px)">
-            <source srcset="Images/Contacts.webp" type="image/webp" media="(min-width: 641px)">
-            <source srcset="Images/Contacts-small.png" media="(max-width: 640px)">
-            <source srcset="Images/Contacts.png" media="(min-width: 641px)">
-            <img src="Images/Contacts.png" alt="Контакты" class="w-full h-full object-contain" loading="lazy">
-          </picture>
-        </div>
-        <h3 class="text-xl font-semibold mt-4">Контакты</h3>
-        <p class="text-gray-600 mt-2 px-2">Как с нами связаться</p>
-      </a>
+        <!-- Акции -->
+        <a href="specials.html" class="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition flex flex-col items-center text-center">
+          <div class="w-full h-40 flex items-center justify-center bg-gray-100">
+            <picture class="w-full h-full flex items-center justify-center">
+              <source srcset="Images/specials-small.webp" type="image/webp" media="(max-width: 640px)">
+              <source srcset="Images/specials.webp" type="image/webp" media="(min-width: 641px)">
+              <source srcset="Images/specials-small.png" media="(max-width: 640px)">
+              <source srcset="Images/specials.png" media="(min-width: 641px)">
+              <img src="Images/specials.png" alt="Акции" class="w-full h-full object-contain" loading="lazy">
+            </picture>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Акции</h3>
+          <p class="text-gray-600 mt-2 px-2">Специальные предложения для вас</p>
+        </a>
 
-    </div>
-  </section>
+        <!-- Контакты -->
+        <a href="contacts.html" class="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-lg transition flex flex-col items-center text-center">
+          <div class="w-full h-40 flex items-center justify-center bg-gray-100">
+            <picture class="w-full h-full flex items-center justify-center">
+              <source srcset="Images/Contacts-small.webp" type="image/webp" media="(max-width: 640px)">
+              <source srcset="Images/Contacts.webp" type="image/webp" media="(min-width: 641px)">
+              <source srcset="Images/Contacts-small.png" media="(max-width: 640px)">
+              <source srcset="Images/Contacts.png" media="(min-width: 641px)">
+              <img src="Images/Contacts.png" alt="Контакты" class="w-full h-full object-contain" loading="lazy">
+            </picture>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Контакты</h3>
+          <p class="text-gray-600 mt-2 px-2">Как с нами связаться</p>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer id="contacts" class="bg-gray-900 text-white mt-10">
