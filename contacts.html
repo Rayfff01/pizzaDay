@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow"/>
   <title>Контакты — Pizza Day | Доставка пиццы в Новосибирске</title>
-  <meta name="description" content="Свяжитесь с пиццерией Pizza Day в Новосибирске: 
-  адрес, телефон, график работы и форма обратной связи. Быстрая доставка пиццы и закусок.">
-
-  <meta name="keywords" content="контакты Pizza Day, доставка пиццы Новосибирск, телефон пиццерии, адрес Pizza Day, 
-  итальянская пицца, заказ еды">
+  <meta name="description" content="Свяжитесь с пиццерией Pizza Day в Новосибирске: адрес, телефон, график работы и форма обратной связи. Быстрая доставка пиццы и закусок.">
+  <meta name="keywords" content="контакты Pizza Day, доставка пиццы Новосибирск, телефон пиццерии, адрес Pizza Day, итальянская пицца, заказ еды">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Контакты — Pizza Day">
@@ -24,6 +20,17 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="cart.js" defer></script>
+
+  <!-- Подключение шрифта с unicode-range для кириллицы -->
+  <style>
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      unicode-range: U+0400-04FF; /* только кириллица */
+    }
+  </style>
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-800">
@@ -31,13 +38,15 @@
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Логотип -->
+      <!-- Логотип адаптивный -->
       <a href="index.html" class="flex items-center gap-3">
-        <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain">
+        <picture>
+          <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain" loading="lazy">
+        </picture>
         <span class="text-lg font-bold text-yellow-600">Pizza Day</span>
       </a>
 
-      <!-- Навигация для десктопа -->
+      <!-- Навигация -->
       <nav id="desktopNav" class="hidden md:flex items-center gap-6" aria-label="Главное меню">
         <a href="index.html" class="hover:text-yellow-600">Главная</a>
         <a href="menu.html" class="hover:text-yellow-600">Меню</a>
@@ -45,17 +54,12 @@
         <a href="contacts.html" class="text-yellow-600 font-semibold">Контакты</a>
       </nav>
 
-      <!-- Правая часть -->
       <div class="flex items-center gap-3">
         <a href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm">Войти</a>
         <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm">Корзина</button>
 
-        <!-- Кнопка-бургер -->
-        <button id="burgerBtn"
-                class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <button id="burgerBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
         </button>
@@ -64,12 +68,11 @@
 
     <!-- Мобильное меню -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
-      <nav class="px-4 pt-3 pb-4 flex flex-col gap-2" aria-label="Мобильное меню">
+      <nav class="px-4 pt-3 pb-4 flex flex-col gap-2">
         <a href="index.html" class="py-2 text-base font-medium">Главная</a>
         <a href="menu.html" class="py-2 text-base font-medium">Меню</a>
         <a href="specials.html" class="py-2 text-base font-medium">Акции</a>
         <a href="contacts.html" class="py-2 text-base font-medium text-yellow-600 font-semibold">Контакты</a>
-
         <div class="pt-2 border-t border-gray-100">
           <a href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3">Войти</a>
           <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl">Корзина</button>
@@ -83,7 +86,6 @@
     <h2 class="text-3xl font-bold text-center mb-10">Свяжитесь с нами</h2>
     
     <div class="grid md:grid-cols-2 gap-10">
-      <!-- Контактная информация -->
       <div class="bg-white rounded-2xl shadow-md p-8">
         <h3 class="text-xl font-semibold mb-6 text-yellow-600">Контактная информация</h3>
         <p class="mb-4"><strong>Телефон:</strong> +7 (666) 999-66-99</p>
@@ -92,66 +94,48 @@
         <p class="mb-4"><strong>Время работы:</strong> Пн-Вс: 10:00 – 23:00</p>
       </div>
 
-      <!-- Форма обратной связи -->
       <div class="bg-white rounded-2xl shadow-md p-8">
         <h3 class="text-xl font-semibold mb-6 text-yellow-600">Напишите нам</h3>
         <form onsubmit="return false;" class="space-y-4">
-          <input type="text" placeholder="Ваше имя" required 
-                 class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
-          <input type="email" placeholder="Ваш Email" required 
-                 class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
-          <textarea placeholder="Ваше сообщение" rows="4" required
-                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600"></textarea>
-          <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 w-full">
-            Отправить
-          </button>
+          <input type="text" placeholder="Ваше имя" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
+          <input type="email" placeholder="Ваш Email" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
+          <textarea placeholder="Ваше сообщение" rows="4" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600"></textarea>
+          <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 w-full">Отправить</button>
         </form>
       </div>
     </div>
 
-    <!-- Карта -->
     <div class="mt-16">
       <h3 class="text-xl font-semibold mb-6 text-center text-yellow-600">Мы на карте</h3>
       <div class="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-md">
-        <iframe 
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e6a7fbe44b7d4930cfd8e1af2ff0dd4d1a2a785c9e1e3ab4a2d1cf74dc9c53c&amp;source=constructor"
-          width="100%" 
-          height="100%" 
-          frameborder="0"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e6a7fbe44b7d4930cfd8e1af2ff0dd4d1a2a785c9e1e3ab4a2d1cf74dc9c53c&amp;source=constructor" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contacts" class="bg-gray-900 text-white mt-10">
+  <footer class="bg-gray-900 text-white mt-10">
     <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 gap-8 md:grid-cols-3">
       <div>
         <h3 class="text-lg font-bold mb-3">Pizza Day</h3>
         <p class="text-gray-300">Настоящая итальянская пицца в центре города</p>
       </div>
-
       <div>
         <h3 class="text-lg font-bold mb-3">Контакты</h3>
         <p class="text-gray-300">Тел: +7 (666) 999-66-99</p>
         <p class="text-gray-300">Адрес: г. Новосибирск, ул. Пиццерийная, 5</p>
         <a href="mailto:info@pizzaday.ru" class="text-yellow-400 hover:underline mt-2 inline-block">info@pizzaday.ru</a>
       </div>
-
       <div>
         <h3 class="text-lg font-bold mb-3">Время работы</h3>
         <p class="text-gray-300">Пн–Вс: 10:00 – 23:00</p>
       </div>
     </div>
-
     <div class="border-t border-gray-800">
       <p class="text-center text-gray-400 py-4">© 2025 Pizza Day. Все права защищены.</p>
     </div>
   </footer>
 
-  <!-- Модалка корзины -->
   <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
     <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
       <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
@@ -161,25 +145,22 @@
   </div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.getElementById('burgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (burger && mobileMenu) {
-      burger.addEventListener('click', () => {
-        const expanded = burger.getAttribute('aria-expanded') === 'true';
-        burger.setAttribute('aria-expanded', String(!expanded));
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) {
-        mobileMenu.classList.add('hidden');
-        burger.setAttribute('aria-expanded', 'false');
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.getElementById('burgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (burger && mobileMenu) {
+        burger.addEventListener('click', () => {
+          burger.setAttribute('aria-expanded', burger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+          mobileMenu.classList.toggle('hidden');
+        });
       }
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.classList.add('hidden');
+          burger.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
-  });
   </script>
 
 </body>

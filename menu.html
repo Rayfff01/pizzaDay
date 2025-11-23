@@ -21,163 +21,160 @@
   <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Unicode-range для шрифтов (пример для Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-800">
 
   <!-- Header -->
-<header class="bg-white shadow-md sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <!-- Логотип -->
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain" loading="lazy">
-      <span class="text-lg font-bold text-yellow-600">Pizza Day</span>
-    </a>
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain" loading="lazy">
+        <span class="text-lg font-bold text-yellow-600">Pizza Day</span>
+      </a>
 
-    <!-- Навигация для десктопа -->
-    <nav id="desktopNav" class="hidden md:flex items-center gap-6" aria-label="Главное меню">
-      <a href="index.html" class="hover:text-yellow-600">Главная</a>
-      <a href="menu.html" class="text-yellow-600 font-semibold">Меню</a>
-      <a href="specials.html" class="hover:text-yellow-600">Акции</a>
-      <a href="contacts.html" class="hover:text-yellow-600">Контакты</a>
-    </nav>
+      <nav id="desktopNav" class="hidden md:flex items-center gap-6" aria-label="Главное меню">
+        <a href="index.html" class="hover:text-yellow-600">Главная</a>
+        <a href="menu.html" class="text-yellow-600 font-semibold">Меню</a>
+        <a href="specials.html" class="hover:text-yellow-600">Акции</a>
+        <a href="contacts.html" class="hover:text-yellow-600">Контакты</a>
+      </nav>
 
-    <!-- Правая часть -->
-    <div class="flex items-center gap-3">
-      <a href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm">Войти</a>
-      <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm">Корзина</button>
+      <div class="flex items-center gap-3">
+        <a href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm">Войти</a>
+        <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm">Корзина</button>
 
-      <!-- Кнопка-бургер -->
-      <button id="burgerBtn"
-              class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Мобильное меню -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
-    <nav class="px-4 pt-3 pb-4 flex flex-col gap-2" aria-label="Мобильное меню">
-      <a href="index.html" class="py-2 text-base font-medium">Главная</a>
-      <a href="menu.html" class="py-2 text-base font-medium text-yellow-600 font-semibold">Меню</a>
-      <a href="specials.html" class="py-2 text-base font-medium">Акции</a>
-      <a href="contacts.html" class="py-2 text-base font-medium">Контакты</a>
-
-      <div class="pt-2 border-t border-gray-100">
-        <a href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3">Войти</a>
-        <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl">Корзина</button>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<!-- Menu Section -->
-<section id="menu" class="py-16 max-w-6xl mx-auto px-6">
-  <h2 class="text-3xl font-bold text-center mb-10">Наше меню</h2>
-
-  <!-- Пиццы -->
-  <h3 class="text-2xl font-semibold mb-6">Пицца</h3>
-  <div id="pizzas-container" class="flex flex-wrap gap-6 justify-center">
-    <!-- Пример карточки с lazy loading -->
-    <div class="bg-white shadow-md rounded-2xl overflow-hidden w-64">
-      <img src="Images/Menu.png" alt="Пицца" class="w-full h-40 object-contain" loading="lazy">
-      <div class="p-4">
-        <h4 class="font-semibold text-lg">Маргарита</h4>
-        <p class="text-gray-600 mt-2">Классическая пицца с томатным соусом и сыром.</p>
+        <button id="burgerBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
+
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+      <nav class="px-4 pt-3 pb-4 flex flex-col gap-2" aria-label="Мобильное меню">
+        <a href="index.html" class="py-2 text-base font-medium">Главная</a>
+        <a href="menu.html" class="py-2 text-base font-medium text-yellow-600 font-semibold">Меню</a>
+        <a href="specials.html" class="py-2 text-base font-medium">Акции</a>
+        <a href="contacts.html" class="py-2 text-base font-medium">Контакты</a>
+
+        <div class="pt-2 border-t border-gray-100">
+          <a href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3">Войти</a>
+          <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl">Корзина</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-16 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Наше меню</h2>
+
+    <!-- Пиццы -->
+    <h3 class="text-2xl font-semibold mb-6">Пицца</h3>
+    <div id="pizzas-container" class="flex flex-wrap gap-6 justify-center">
+      <!-- Карточки без изменения картинок -->
+      <div class="bg-white shadow-md rounded-2xl overflow-hidden w-64">
+        <img src="Images/Menu.png" alt="Пицца" class="w-full h-40 object-contain" loading="lazy">
+        <div class="p-4">
+          <h4 class="font-semibold text-lg"></h4>
+          <p class="text-gray-600 mt-2"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Закуски -->
+    <h3 class="text-2xl font-semibold mb-6 mt-10">Закуски</h3>
+    <div id="snacks-container" class="flex flex-wrap gap-6 justify-center"></div>
+
+    <!-- Десерты -->
+    <h3 class="text-2xl font-semibold mb-6 mt-10">Десерты</h3>
+    <div id="desserts-container" class="flex flex-wrap gap-6 justify-center"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacts" class="bg-gray-900 text-white mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div>
+        <h3 class="text-lg font-bold mb-3">Pizza Day</h3>
+        <p class="text-gray-300">Настоящая итальянская пицца в центре города</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Контакты</h3>
+        <p class="text-gray-300">Тел: +7 (666) 999-66-99</p>
+        <p class="text-gray-300">Адрес: г. Новосибирск, ул. Пиццерийная, 5</p>
+        <a href="mailto:info@pizzaday.ru" class="text-yellow-400 hover:underline mt-2 inline-block">info@pizzaday.ru</a>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Время работы</h3>
+        <p class="text-gray-300">Пн–Вс: 10:00 – 23:00</p>
+      </div>
+    </div>
+    <div class="border-t border-gray-800">
+      <p class="text-center text-gray-400 py-4">© 2025 Pizza Day. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Модалки -->
+  <div id="pizzaModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+      <h3 id="modalTitle" class="text-xl font-semibold mb-4"></h3>
+      <div class="w-full h-64 mb-4 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
+        <img id="modalImage" src="" alt="" class="w-full h-full object-contain" loading="lazy">
+      </div>
+      <p id="modalDesc" class="text-gray-600 mb-4"></p>
+      <p id="modalPrice" class="font-bold mb-4"></p>
+      <div id="modalSizeContainer" class="mb-4">
+        <label for="pizzaSize" class="block mb-2 font-semibold">Выберите размер (см):</label>
+        <select id="pizzaSize" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+        </select>
+      </div>
+      <button id="addToCartBtn" class="w-full bg-yellow-600 text-white py-2 rounded-xl hover:bg-yellow-700">Добавить в корзину</button>
+    </div>
   </div>
 
-  <!-- Закуски -->
-  <h3 class="text-2xl font-semibold mb-6 mt-10">Закуски</h3>
-  <div id="snacks-container" class="flex flex-wrap gap-6 justify-center"></div>
-
-  <!-- Десерты -->
-  <h3 class="text-2xl font-semibold mb-6 mt-10">Десерты</h3>
-  <div id="desserts-container" class="flex flex-wrap gap-6 justify-center"></div>
-</section>
-
-<!-- Footer -->
-<footer id="contacts" class="bg-gray-900 text-white mt-10">
-  <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-    <div>
-      <h3 class="text-lg font-bold mb-3">Pizza Day</h3>
-      <p class="text-gray-300">Настоящая итальянская пицца в центре города</p>
-    </div>
-    <div>
-      <h3 class="text-lg font-bold mb-3">Контакты</h3>
-      <p class="text-gray-300">Тел: +7 (666) 999-66-99</p>
-      <p class="text-gray-300">Адрес: г. Новосибирск, ул. Пиццерийная, 5</p>
-      <a href="mailto:info@pizzaday.ru" class="text-yellow-400 hover:underline mt-2 inline-block">info@pizzaday.ru</a>
-    </div>
-    <div>
-      <h3 class="text-lg font-bold mb-3">Время работы</h3>
-      <p class="text-gray-300">Пн–Вс: 10:00 – 23:00</p>
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
+      <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+      <h3 class="text-lg font-semibold mb-4">Ваша корзина</h3>
+      <div id="cart-container" class="flex flex-col gap-2 max-h-96 overflow-y-auto"></div>
     </div>
   </div>
-  <div class="border-t border-gray-800">
-    <p class="text-center text-gray-400 py-4">© 2025 Pizza Day. Все права защищены.</p>
-  </div>
-</footer>
 
-<!-- Модалки -->
-<div id="pizzaModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
-    <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-    <h3 id="modalTitle" class="text-xl font-semibold mb-4"></h3>
-    <div class="w-full h-64 mb-4 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
-      <img id="modalImage" src="" alt="" class="w-full h-full object-contain" loading="lazy">
-    </div>
-    <p id="modalDesc" class="text-gray-600 mb-4"></p>
-    <p id="modalPrice" class="font-bold mb-4"></p>
-    <div id="modalSizeContainer" class="mb-4">
-      <label for="pizzaSize" class="block mb-2 font-semibold">Выберите размер (см):</label>
-      <select id="pizzaSize" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-600">
-        <option value="25">25</option>
-        <option value="30">30</option>
-        <option value="35">35</option>
-      </select>
-    </div>
-    <button id="addToCartBtn" class="w-full bg-yellow-600 text-white py-2 rounded-xl hover:bg-yellow-700">Добавить в корзину</button>
-  </div>
-</div>
+  <!-- Скрипты -->
+  <script type="module" src="menu.js" defer></script>
+  <script type="module" src="cart.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.getElementById('burgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-<div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
-    <button id="closeCart" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-    <h3 class="text-lg font-semibold mb-4">Ваша корзина</h3>
-    <div id="cart-container" class="flex flex-col gap-2 max-h-96 overflow-y-auto"></div>
-  </div>
-</div>
+      if (burger && mobileMenu) {
+        burger.addEventListener('click', () => {
+          const expanded = burger.getAttribute('aria-expanded') === 'true';
+          burger.setAttribute('aria-expanded', String(!expanded));
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
 
-<!-- Скрипты -->
-<script type="module" src="menu.js" defer></script>
-<script type="module" src="cart.js" defer></script>
-<script defer>
-document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.getElementById('burgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', () => {
-      const expanded = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!expanded));
-      mobileMenu.classList.toggle('hidden');
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.classList.add('hidden');
+          if (burger) burger.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
-  }
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
-      mobileMenu.classList.add('hidden');
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
-</script>
+  </script>
 
 </body>
 </html>

@@ -71,46 +71,62 @@
 
   <!-- Specials Section -->
   <section class="py-16 max-w-6xl mx-auto px-6">
-    <h1 class="text-3xl font-bold text-center mb-10">Наши акции</h1>
+  <h1 class="text-3xl font-bold text-center mb-10">Наши акции</h1>
 
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Акция 1 -->
-      <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col">
-        <div class="w-full h-48 flex items-center justify-center bg-gray-100">
-          <img src="Images/OnePlusOne.png" alt="2 пиццы по цене 1" class="w-full h-full object-contain" loading="lazy" decoding="async">
-        </div>
-        <div class="p-6 flex flex-col text-center flex-1">
-          <h3 class="text-xl font-semibold mb-2">2 пиццы по цене 1</h3>
-          <p class="text-gray-600 mb-4">Каждый вторник покупаешь одну пиццу — вторая бесплатно!</p>
-          <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-auto">Подробнее</button>
-        </div>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Акция 1 -->
+    <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col items-center text-center">
+      <div class="w-full h-48 flex items-center justify-center bg-gray-100">
+        <picture class="w-full h-full flex items-center justify-center">
+          <!-- WebP -->
+          <source srcset="Images/OnePlusOne-small.webp" type="image/webp" media="(max-width: 640px)">
+          <source srcset="Images/OnePlusOne.webp" type="image/webp" media="(min-width: 641px)">
+          <!-- PNG fallback -->
+          <source srcset="Images/OnePlusOne-small.png" media="(max-width: 640px)">
+          <source srcset="Images/OnePlusOne.png" media="(min-width: 641px)">
+          <img src="Images/OnePlusOne.png" alt="2 пиццы по цене 1" class="w-full h-full object-contain" loading="lazy">
+        </picture>
       </div>
-
-      <!-- Акция 2 -->
-      <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col">
-        <div class="w-full h-48 flex items-center justify-center bg-gray-100">
-          <img src="Images/Stud.png" alt="Скидка студентам" class="w-full h-full object-contain" loading="lazy" decoding="async">
-        </div>
-        <div class="p-6 flex flex-col text-center flex-1">
-          <h3 class="text-xl font-semibold mb-2">Скидка студентам 25%</h3>
-          <p class="text-gray-600 mb-4">Покажи студенческий и получи скидку на все пиццы.</p>
-          <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-auto">Подробнее</button>
-        </div>
-      </div>
-
-      <!-- Акция 3 -->
-      <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col">
-        <div class="w-full h-48 flex items-center justify-center bg-gray-100">
-          <img src="Images/Birthday.png" alt="Бесплатная пицца в день рождения" class="w-full h-full object-contain" loading="lazy" decoding="async">
-        </div>
-        <div class="p-6 flex flex-col text-center flex-1">
-          <h3 class="text-xl font-semibold mb-2">Бесплатная пицца в день рождения</h3>
-          <p class="text-gray-600 mb-4">При заказе от 1000 ₽ получи бесплатную пиццу в свой день рождения!</p>
-          <button class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-auto">Подробнее</button>
-        </div>
-      </div>
+      <h3 class="text-xl font-semibold mt-4">2 пиццы по цене 1</h3>
+      <p class="text-gray-600 mt-2 px-2">Каждый вторник покупаешь одну пиццу — вторая бесплатно!</p>
+      <button class="w-4/5 bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-4 mb-6">Подробнее</button>
     </div>
-  </section>
+
+    <!-- Акция 2 -->
+    <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col items-center text-center">
+      <div class="w-full h-48 flex items-center justify-center bg-gray-100">
+        <picture class="w-full h-full flex items-center justify-center">
+          <source srcset="Images/Stud-small.webp" type="image/webp" media="(max-width: 640px)">
+          <source srcset="Images/Stud.webp" type="image/webp" media="(min-width: 641px)">
+          <source srcset="Images/Stud-small.png" media="(max-width: 640px)">
+          <source srcset="Images/Stud.png" media="(min-width: 641px)">
+          <img src="Images/Stud.png" alt="Скидка студентам" class="w-full h-full object-contain" loading="lazy">
+        </picture>
+      </div>
+      <h3 class="text-xl font-semibold mt-4">Скидка студентам 25%</h3>
+      <p class="text-gray-600 mt-2 px-2">Покажи студенческий и получи скидку на все пиццы.</p>
+      <button class="w-4/5 bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-4 mb-6">Подробнее</button>
+    </div>
+
+    <!-- Акция 3 -->
+    <div class="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col items-center text-center">
+      <div class="w-full h-48 flex items-center justify-center bg-gray-100">
+        <picture class="w-full h-full flex items-center justify-center">
+          <source srcset="Images/Birthday-small.webp" type="image/webp" media="(max-width: 640px)">
+          <source srcset="Images/Birthday.webp" type="image/webp" media="(min-width: 641px)">
+          <source srcset="Images/Birthday-small.png" media="(max-width: 640px)">
+          <source srcset="Images/Birthday.png" media="(min-width: 641px)">
+          <img src="Images/Birthday.png" alt="Бесплатная пицца в день рождения" class="w-full h-full object-contain" loading="lazy">
+        </picture>
+      </div>
+      <h3 class="text-xl font-semibold mt-4">Бесплатная пицца в день рождения</h3>
+      <p class="text-gray-600 mt-2 px-2">При заказе от 1000 ₽ получи бесплатную пиццу в свой день рождения!</p>
+      <button class="w-4/5 bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 mt-4 mb-6">Подробнее</button>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- Footer -->
   <footer id="contacts" class="bg-gray-900 text-white mt-10">
