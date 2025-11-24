@@ -1,19 +1,6 @@
 import { addToCart } from "./cart.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDSkajRSnMwdzr8XOgjmOA_gseA1tsVVYw",
-  authDomain: "pizza-dbe68.firebaseapp.com",
-  databaseURL: "https://pizza-dbe68-default-rtdb.firebaseio.com",
-  projectId: "pizza-dbe68",
-  storageBucket: "pizza-dbe68.firebasestorage.app",
-  messagingSenderId: "559820954556",
-  appId: "1:559820954556:web:2107090d8da535c12129b9"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+import { db } from "./firebaseConfig.js"; // <- импорт готового db
+import { ref, get } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const pizzasContainer = document.getElementById("pizzas-container");
@@ -102,15 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
     modalImage.src = selectedItem.img;
     modalDesc.textContent = selectedItem.compound;
 
-    // показываем или скрываем выбор размера
     modalSizeContainer.style.display = isSmallItem ? "none" : "block";
-
     updateModalPrice();
     modal.classList.remove("hidden");
     modal.classList.add("flex");
   }
 
-  // --- Пересчет цены при изменении размера ---
   pizzaSize.addEventListener("change", updateModalPrice);
 
   function updateModalPrice() {
@@ -120,16 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!isSmallItem) {
       const size = pizzaSize.value;
-      let multiplier = 1;
-      if (size === "30") multiplier = 1.3;
-      if (size === "35") multiplier = 1.6;
-      finalPrice = Math.round(selectedItem.price * multiplier);
+      if (size === "30") finalPrice = Math.round(selectedItem.price * 1.3);
+      if (size === "35") finalPrice = Math.round(selectedItem.price * 1.6);
     }
 
     modalPrice.textContent = `Цена: ${finalPrice} ₽`;
   }
 
-  // --- Добавление в корзину ---
   addToCartBtn.addEventListener("click", () => {
     if (!selectedItem) return;
 
@@ -148,11 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     alert(`Добавлено: ${selectedItem.name} ${isSmallItem ? "" : `(${size} см)`}`);
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
+    closePizzaModal();
   });
 
-  // --- Закрытие модалки ---
   closeModal.addEventListener("click", closePizzaModal);
   modal.addEventListener("click", e => {
     if (e.target === modal) closePizzaModal();

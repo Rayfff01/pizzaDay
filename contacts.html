@@ -18,6 +18,8 @@
   <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="cart.js" defer></script>
+  <script type="module" src="auth-status.js" defer></script>
+
 
   <style>
     @media (prefers-reduced-motion: reduce) {
@@ -46,7 +48,11 @@
     </nav>
 
     <div class="flex items-center gap-3">
-      <a href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400">Войти</a>
+      <!-- Десктоп кнопка авторизации -->
+      <a id="accountButtonDesktop" href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        Войти
+      </a>
+
       <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400">Корзина</button>
 
       <button id="burgerBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
@@ -63,13 +69,18 @@
       <a href="menu.html" class="py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Меню</a>
       <a href="specials.html" class="py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Акции</a>
       <a href="contacts.html" class="py-2 text-base font-medium text-yellow-600 font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">Контакты</a>
+
       <div class="pt-2 border-t border-gray-100">
-        <a href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3 focus:outline-none focus:ring-2 focus:ring-yellow-400">Войти</a>
+        <!-- Мобильная кнопка авторизации -->
+        <a id="accountButtonMobile" href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          Войти
+        </a>
         <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400">Корзина</button>
       </div>
     </nav>
   </div>
 </header>
+
 
 <main>
   <section class="py-16 max-w-6xl mx-auto px-6">

@@ -24,53 +24,63 @@
 
   <!-- Unicode-range для шрифтов (пример для Roboto) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=cyrillic" rel="stylesheet">
+
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain" loading="lazy">
-        <span class="text-lg font-bold text-yellow-600">Pizza Day</span>
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="Images/Logo1.png" alt="Pizza Day логотип" class="w-12 h-12 object-contain" loading="lazy">
+      <span class="text-lg font-bold text-yellow-600">Pizza Day</span>
+    </a>
+
+    <nav id="desktopNav" class="hidden md:flex items-center gap-6" aria-label="Главное меню">
+      <a href="index.html" class="hover:text-yellow-600">Главная</a>
+      <a href="menu.html" class="text-yellow-600 font-semibold">Меню</a>
+      <a href="specials.html" class="hover:text-yellow-600">Акции</a>
+      <a href="contacts.html" class="hover:text-yellow-600">Контакты</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <!-- Десктоп кнопка -->
+      <a id="accountButtonDesktop" href="auth.html" 
+         class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm">
+        Войти
       </a>
 
-      <nav id="desktopNav" class="hidden md:flex items-center gap-6" aria-label="Главное меню">
-        <a href="index.html" class="hover:text-yellow-600">Главная</a>
-        <a href="menu.html" class="text-yellow-600 font-semibold">Меню</a>
-        <a href="specials.html" class="hover:text-yellow-600">Акции</a>
-        <a href="contacts.html" class="hover:text-yellow-600">Контакты</a>
-      </nav>
+      <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm">Корзина</button>
 
-      <div class="flex items-center gap-3">
-        <a href="auth.html" class="hidden md:inline-block bg-gray-200 text-gray-800 px-3 py-2 rounded-xl hover:bg-gray-300 text-sm">Войти</a>
-        <button id="cartButton" class="hidden md:inline-flex bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 text-sm">Корзина</button>
+      <button id="burgerBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 
-        <button id="burgerBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16"></path>
-          </svg>
-        </button>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+    <nav class="px-4 pt-3 pb-4 flex flex-col gap-2" aria-label="Мобильное меню">
+      <a href="index.html" class="py-2 text-base font-medium">Главная</a>
+      <a href="menu.html" class="py-2 text-base font-medium text-yellow-600 font-semibold">Меню</a>
+      <a href="specials.html" class="py-2 text-base font-medium">Акции</a>
+      <a href="contacts.html" class="py-2 text-base font-medium">Контакты</a>
+
+      <div class="pt-2 border-t border-gray-100">
+        <!-- Мобильная кнопка -->
+        <a id="accountButtonMobile" href="auth.html" 
+           class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3">
+          Войти
+        </a>
+        <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl">Корзина</button>
       </div>
-    </div>
-
-    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
-      <nav class="px-4 pt-3 pb-4 flex flex-col gap-2" aria-label="Мобильное меню">
-        <a href="index.html" class="py-2 text-base font-medium">Главная</a>
-        <a href="menu.html" class="py-2 text-base font-medium text-yellow-600 font-semibold">Меню</a>
-        <a href="specials.html" class="py-2 text-base font-medium">Акции</a>
-        <a href="contacts.html" class="py-2 text-base font-medium">Контакты</a>
-
-        <div class="pt-2 border-t border-gray-100">
-          <a href="auth.html" class="block w-full text-center bg-gray-200 text-gray-800 px-4 py-3 rounded-xl mt-3">Войти</a>
-          <button id="cartButtonMobile" class="w-full mt-3 bg-yellow-600 text-white px-4 py-3 rounded-xl">Корзина</button>
-        </div>
-      </nav>
-    </div>
-  </header>
+    </nav>
+  </div>
+</header>
 
   <!-- Menu Section -->
   <section id="menu" class="py-16 max-w-6xl mx-auto px-6">
@@ -152,6 +162,9 @@
   </div>
 
   <!-- Скрипты -->
+  <script type="module" src="firebaseConfig.js" defer></script>
+  <script type="module" src="auth-status.js" defer></script>
+
   <script type="module" src="menu.js" defer></script>
   <script type="module" src="cart.js" defer></script>
   <script defer>

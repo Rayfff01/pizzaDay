@@ -1,39 +1,41 @@
 import { auth } from "./firebaseConfig.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector("header .flex.space-x-4");
-  const loginLink = header.querySelector('a[href="auth.html"]');
+// Слушаем изменения авторизации
+onAuthStateChanged(auth, (user) => {
+  const desktop = document.getElementById("accountButtonDesktop");
+  const mobile = document.getElementById("accountButtonMobile");
 
-  // Создаем кнопку "Выйти", но пока скрываем
-  const logoutBtn = document.createElement("button");
-  logoutBtn.textContent = "Выйти";
-  logoutBtn.className = "bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-600";
-  logoutBtn.style.display = "none"; 
-  header.appendChild(logoutBtn);
+  if (!desktop || !mobile) return;
 
-  logoutBtn.addEventListener("click", async () => {
-    try {
-      await signOut(auth);
-      // После выхода кнопка "Аккаунт" снова "Войти"
-      loginLink.textContent = "Войти";
-      loginLink.href = "auth.html";
-      logoutBtn.style.display = "none";
-    } catch (error) {
-      console.error("Ошибка выхода:", error);
-    }
-  });
+  if (user) {
+    // Пользователь авторизован
+    desktop.textContent = "Аккаунт";
+    desktop.href = "account.html"; // страница аккаунта
 
-  // Отслеживаем изменения авторизации
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      loginLink.textContent = "Аккаунт";
-      loginLink.href = "account.html";
-      logoutBtn.style.display = "inline-block";
-    } else {
-      loginLink.textContent = "Войти";
-      loginLink.href = "auth.html";
-      logoutBtn.style.display = "none";
-    }
-  });
+    mobile.textContent = "Аккаунт";
+    mobile.href = "account.html"; // страница аккаунта
+
+  } else {
+    // Пользователь не авторизован
+    desktop.textContent = "Войти";
+    desktop.href = "auth.html";
+
+    mobile.textContent = "Войти";
+    mobile.href = "auth.html";
+  }
 });
+
+// Если хочешь добавить выход из аккаунта по клику (опционально)
+// Например, на странице account.html:
+export function logoutUser() {
+  signOut(auth)
+    .then(() => {
+      console.log("Пользователь вышел");
+      // Можно обновить страницу или редирект
+      window.location.href = "index.html";
+    })
+    .catch((error) => {
+      console.error("Ошибка выхода:", error);
+    });
+}

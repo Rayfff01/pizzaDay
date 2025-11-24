@@ -1,8 +1,7 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js"; // если используешь RTDB
 
-// 🔑 Конфигурация Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDSkajRSnMwdzr8XOgjmOA_gseA1tsVVYw",
   authDomain: "pizza-dbe68.firebaseapp.com",
@@ -14,13 +13,11 @@ const firebaseConfig = {
   measurementId: "G-LPQ2HQVEX9"
 };
 
-// Инициализация Firebase
-const app = initializeApp(firebaseConfig);
+// Если приложение уже инициализировано — возвращаем его, иначе создаем новое
+const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 
-// Firebase Auth
+// Экспорт auth, db и т.д.
 export const auth = getAuth(app);
-
-// Realtime Database
-export const database = getDatabase(app);
+export const db = getDatabase(app);
 
 export default app;
