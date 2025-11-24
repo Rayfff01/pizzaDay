@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
 // 🔑 Конфигурация Firebase
 const firebaseConfig = {
@@ -16,6 +17,10 @@ const firebaseConfig = {
 // Инициализация Firebase
 const app = initializeApp(firebaseConfig);
 
-// Получаем объект аутентификации
+// Firebase Auth
 export const auth = getAuth(app);
+
+// Realtime Database
+export const database = getDatabase(app);
+
 export default app;
