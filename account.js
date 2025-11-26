@@ -1,4 +1,4 @@
-import { auth, db } from "./firebaseConfig.js"; // используем db из конфига
+import { auth, db } from "./firebaseConfig.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 import { ref, get, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
@@ -6,27 +6,36 @@ import { ref, get, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
 const userName = document.getElementById("userName");
 const userEmail = document.getElementById("userEmail");
 const logoutButton = document.getElementById("logoutButton");
-
 const editNameButton = document.getElementById("editNameButton");
 const editNameContainer = document.getElementById("editNameContainer");
 const newNameInput = document.getElementById("newNameInput");
 const saveNameButton = document.getElementById("saveNameButton");
+const adminButton = document.getElementById("adminPanelButton");
 
 let currentUser = null;
 
-// Авторизация и загрузка имени
+// Авторизация и загрузка данных
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     currentUser = user;
     userEmail.textContent = user.email;
 
     try {
-      const snapshot = await get(ref(db, `Users/${user.uid}/displayName`));
-      console.log("Имя из базы:", snapshot.val());
-      userName.textContent = snapshot.exists() ? snapshot.val() : "Не указано";
+      // Имя
+      const nameSnap = await get(ref(db, `Users/${user.uid}/displayName`));
+      userName.textContent = nameSnap.exists() ? nameSnap.val() : "Не указано";
+
+      // roleID
+      const roleSnap = await get(ref(db, `Users/${user.uid}/roleID`));
+      const roleID = roleSnap.exists() ? roleSnap.val() : 1;
+
+      // Показываем кнопку админки только для roleID = 2
+      if (roleID === 2) {
+        adminButton.classList.remove("hidden");
+      }
+
     } catch (error) {
-      console.error("Ошибка при получении имени:", error);
-      userName.textContent = "Не указано";
+      console.error("Ошибка при получении данных пользователя:", error);
     }
 
   } else {
