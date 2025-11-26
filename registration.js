@@ -1,13 +1,6 @@
-import { auth, database } from "./firebaseConfig.js";
-import {
-  createUserWithEmailAndPassword,
-  updateProfile
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-
-import {
-  ref,
-  set
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+import { auth, db } from "./firebaseConfig.js";
+import { createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { ref, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
 document.getElementById("registerButton").addEventListener("click", async () => {
   const firstname = document.getElementById("firstname").value.trim();
@@ -15,7 +8,6 @@ document.getElementById("registerButton").addEventListener("click", async () => 
   const password = document.getElementById("password").value;
   const passwordConfirm = document.getElementById("passwordConfirm").value;
 
-  // Проверка полей
   if (!firstname || !email || !password || !passwordConfirm) {
     Swal.fire("Ошибка", "Заполните все поля!", "error");
     return;
@@ -27,24 +19,25 @@ document.getElementById("registerButton").addEventListener("click", async () => 
   }
 
   try {
-    // Создание аккаунта
+    // Создаём аккаунт (Firebase автоматически авторизует пользователя)
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Установка имени в Firebase Auth
+    // Устанавливаем имя
     await updateProfile(user, {
       displayName: firstname
     });
 
-    // Создание записи в Realtime Database
-    await set(ref(database, "Users/" + user.uid), {
+    // Добавляем пользователя в БД
+    await set(ref(db, "Users/" + user.uid), {
       displayName: firstname,
       email: email,
-      role: "user"
+      roleID: 1
     });
 
+    // Редирект на главную страницу
     Swal.fire("Успех!", "Регистрация прошла успешно!", "success").then(() => {
-      window.location.href = "auth.html";
+      window.location.href = "index.html"; // пользователь уже авторизован
     });
 
   } catch (error) {
