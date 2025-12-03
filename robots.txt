@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /private/      
-Disallow: /firebase/        
+Disallow: 
+Allow: /      
 
 Sitemap: https://rayfff01.github.io/sitemap.xml
